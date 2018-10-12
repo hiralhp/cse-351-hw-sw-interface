@@ -1,0 +1,18 @@
+********************
+* Lab 3 Reflection *
+********************
+Name: Hiral Patel 
+ID: 1521665
+
+
+-----------------------------------------------------------
+1) Assembly instruction: retq in part2 function
+-----------------------------------------------------------
+2) Explain: it is popping off an address that is not accessible because fillArray is overwriting that address. This is happening because the size of our array is 10 and we are trying to fill 90 elements. When we try to write to any array index greater than the 10 allocated spaces, we are overriding the data that is stored at that memory locations, since it was not allocated for the array.
+
+-----------------------------------------------------------
+3)
+ * Line of C code: line 5
+ * Value of i: 6
+-----------------------------------------------------------
+4) Explain: The array b is of size 6, but the program is trying to access b[6] which is the 7th index. There is space allocated for 6 elements of type long. When i = 6 and q is dereferenced, it is part of the memory that is not allocated to the array so we don't know where q is pointing to.

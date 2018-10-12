@@ -1,0 +1,27 @@
+********************
+* Lab 4 Reflection *
+********************
+Name: Hiral Patel
+ID:   1521665
+
+
+-----------------------------------------------------------
+1A) 1250000000
+-----------------------------------------------------------
+1B) 125000000
+-----------------------------------------------------------
+2) Reason: the code is optimized so that multiple calculations are done using a single data access instead of storing them and continually accessing. This is called cache blocking
+
+-----------------------------------------------------------
+3) "Faster" code
+   
+   Method 1: cache blocking
+   Example 1: Reflection question 1. By limiting the number of memory accesses by doing things that require the same memory access together
+   
+   Method 2:  dynamic programming using memoization
+   Example 2: coin change problem. A recursive brute force solution would exceed the time limit in some cases because it runs in exponential time O(S^n) in​ ​the​ ​number​ ​of​ ​the​ ​coins​ ​​n​ ​​with S​​ ​being​ ​the​ ​the​ ​change​ ​amount. Dynamic programming and memoization can be used to keep track of calculations we have already done in an array so that they do not have to be recalculated later
+
+-----------------------------------------------------------
+4) Reason: This difference in time is due to the CPU and the ammount of programs running. If the CPU was overloaded and you are running multiple programs then the program will run slower than if the CPU was free
+   
+-----------------------------------------------------------

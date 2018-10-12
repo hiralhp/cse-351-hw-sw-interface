@@ -1,0 +1,24 @@
+********************
+* Lab 5 Reflection *
+********************
+Name: Hiral Patel
+ID:   1521665
+
+
+-----------------------------------------------------------
+1) Explain the bug: block p points to gets freed but then you try to put something back into that block later. P is written into a free block which was "promised" to not be used by p again once freed
+
+-----------------------------------------------------------
+2) What happens: prints 44
+   Plausible explanation: The space we are allocating is 2*4 = 8 bytes. Which is little space. After p is freed, it is still pointing to the same location. When we malloc space for q, it is picking the same location that p pointed to because the space is big enoug. 
+
+-----------------------------------------------------------
+3) What happens: prints 43
+   Plausible explanation: In this case, the space we allocate is larger because we are allocating a space for 20*4 = 80 bytes. Therefore, even though the location that p pointed to is free we do not choose that location because it is not large enough for the 20 so we choose another free spot.
+
+-----------------------------------------------------------
+4) What happens: prints 43 then Segmentation fault (core dumped) occurs
+   Plausible explanation: A lot of space for allocated for q. and 43 was put in q. Then 44 put in p which is a free block. 44 is stored in p's next field which points to the next free block. Printing q works, but when q is freed the systems attempts to coalesce with the block p is pointing to. Then the newly merged block will be pointing to the next free block at address 44 since *p = 44. However, this address cannot be accessed causing a seg fault. This happens because p is written into a free block which was "promised" to not be used by p again once freed
+
+
+
